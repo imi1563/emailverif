@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+ <!-- <div class="text-center" style="margin-top: 10px;">
+    <a href="http://143.42.117.229/single">
+        <button >Do you want single email verification?</button>
+      </a>
+ </div> -->
+ <div class="text-center" style="margin-top: 10px;">
+    <a href="http://localhost:3001/single">
+        <button >Do you want single email verification?</button>
+      </a>
+ </div>
+    <div class="container">
+  
+        <h2 class="text-center">Bulk Email Validator</h2>
+        <form action="verifybulk" method="post">
+            <div class="form-group" style="width: 600px; margin-left: 300px;">
+                <label for="email">Enter Emails Here (One Email Per Line)</label>
+                <textarea class="form-control" name="emails" required cols="30" rows="10" placeholder="Enter Emails Here"></textarea>
+            </div>
+            <div class="form-group" style="width: 600px; margin-left: 300px;">
+                <button type="submit" class="btn btn-primary btn-block">Verify Emails</button>
+            </div>
+          
+              
+        </form>
+       <table class="table table-striped" style="width: 600px; margin-left: 300px;">
+        <thead>
+            <tr>
+                <th style="background-color: wheat;">Valid Emails</th>
+            </tr>
+        
+        </thead>
+
+        <tbody>
+            <%if(flag){%>
+                <%for(var i = 0; i <text.v.length; i++){%>
+                    <tr>
+                        <td><%=text.v[i]%></td>
+                    </tr>
+                    <%}%>
+                    
+                    
+                    <%}%>
+
+          
+        </tbody>
+
+       </table>
+       <table class="table table-striped" style="width: 600px; margin-left: 300px;">
+        <thead>
+            <tr>
+                <th style="background-color: wheat;">Invalid Emails</th>
+            </tr>
+        
+        </thead>
+
+        <tbody>
+            <%if(flag){%>
+                <%for(var i = 0; i <text.inv.length; i++){%>
+                    <tr>
+                        <td><%=text.inv[i]%></td>
+                    </tr>
+                    <%}%>
+                    
+                    
+                    <%}%>
+
+          
+        </tbody>
+
+       </table>
+       <table class="table table-striped" style="width: 600px; margin-left: 300px;">
+        <thead>
+            <tr>
+                <th style="background-color: wheat;">Catch All Emails</th>
+            </tr>
+        
+        </thead>
+
+        <tbody>
+            <%if(flag){%>
+                <%for(var i = 0; i <text.acceptall.length; i++){%>
+                    <tr>
+                        <td><%=text.acceptall[i]%></td>
+                    </tr>
+                    <%}%>
+                    
+                    
+                    <%}%>
+
+          
+        </tbody>
+
+       </table>
+
+    </div>
+
+</body>
+</html>

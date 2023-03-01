@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk Emails Validations</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- <div class="text-center" style="margin-top: 10px;">
+        <a href="http://143.42.117.229">
+            <button >Do you want bulk email verification?</button>
+          </a>
+     </div> -->
+     <div class="text-center" style="margin-top: 10px;">
+        <a href="http://localhost:3001">
+            <button >Do you want bulk email verification?</button>
+          </a>
+     </div>
+<div class="container">
+    <h2 class="text-center">
+   Email Verification
+    </h2>
+    <form action="/verifysingle" method="post">
+        <div class="form-group" style="width: 300px; margin-left: 420px;">
+            <label for="email">Enter Email Here</label>
+            <textarea name="gmail" class="form-control" maxlength="" required cols="1" rows="1"></textarea>
+        </div>
+    
+        <div class="form-group" style="width: 300px; margin-left: 420px;">
+            <button id="button" class="btn btn-block btn-primary">Verify Email</button>
+        </div>
+    </form>
+    <%if(info){%><table class="table table-striped" style="width: 300px; margin-left: 420px;">
+        <tr>
+          <td></td> <td><h4 style="forced-color-adjust: grid-row; color: red;"><%=info%></h4></td>
+        </tr>
+        <!-- <tr>
+            <td><h2>valid : </h2> </td> <td><h4 class="text-center" style="forced-color-adjust: grid-row;"><%=info %></h4></td>
+        </tr> -->
+          <!-- <tr>
+            <td><h2>typo : </h2> </td> <td><h4 class="text-center" style="forced-color-adjust: grid-row;"><%=info.typ%></h4></td>
+          </tr>
+          <tr>
+            <td><h2>disposable : </h2> </td> <td><h4 class="text-center" style="forced-color-adjust: grid-row;"><%=info.dis %></h4></td>
+          </tr>
+          <tr>
+            <td><h2>mx : </h2> </td> <td><h4 class="text-center" style="forced-color-adjust: grid-row;"><%=info.m %></h4></td>
+          </tr>
+          <tr>
+            <td style="border-style: none" ><h2>smtp : </h2> </td> <td><h4 class="text-center" style="forced-color-adjust: grid-row;"><%=info.sm %></h4></td>
+            <tr>
+                <td><h2>regex : </h2> </td> <td><h4 class="text-center" style="forced-color-adjust: grid-row;"><%=info.reg %></h4></td>
+              </tr>
+          </tr> -->
+    </table>
+   <%}%>
+</div>
+    
+</body>
+</html>
